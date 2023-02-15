@@ -1,0 +1,47 @@
+$textColor: #333333;
+
+body{
+    height: 2000px;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+p{
+    color: $textColor;
+}
+
+.contents {
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    min-height:1.5vh;
+    margin: 1000px auto 100px;
+    
+    .content {
+      width: 100%;
+      height: 100px;
+      opacity: 0;
+      transition-duration: 0.5s;
+      transition-property: opacity, transform;
+      background: red;
+      & + .content {
+        margin-top: 50px;
+      }
+      
+      &:first-of-type {
+        background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
+      }
+      
+      &:nth-of-type(2) {
+        background-image: linear-gradient(to top, #20E2D7 0%, #F9FEA5 100%);
+      }
+      
+      &.is-scrollIn {
+        opacity: 1;
+        transform: translate(0, -50px);
+      }
+    }
+}
